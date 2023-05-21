@@ -25,18 +25,22 @@ class NftController implements Controller {
         )
         this.router.get(
             `${this.path}/:id`,
+            authMiddleware,
             this.getNftById
         )
         this.router.post(
             `${this.path}`,
+            authMiddleware,
             this.createNft
         )
         this.router.put(
             `${this.path}/:id`,
+            authMiddleware,
             this.updateNft
         )
         this.router.delete(
             `${this.path}/:id`,
+            authMiddleware,
             this.deleteNft
         )
     }

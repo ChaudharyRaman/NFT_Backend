@@ -4,6 +4,7 @@ import morgan from "morgan";
 import helmet from 'helmet'
 import Controller from "utils/interfaces/controller.interface";
 import ErrorMiddleware from "./middlewares/error.middleware";
+import { rateLimiterMiddleware } from "./middlewares/rate-limiter.middleware";
 
 
 class App {
@@ -20,6 +21,7 @@ class App {
     }
 
     private initializeMiddlewares(){
+        this.app.use(rateLimiterMiddleware)
         this.app.use(express.json());
         this.app.use(morgan('dev'));
         this.app.use(cors());

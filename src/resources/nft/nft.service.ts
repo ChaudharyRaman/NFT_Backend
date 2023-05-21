@@ -6,8 +6,6 @@ const PUBLIC_KEY = process.env.PUBLIC_KEY;
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
 const contractAddress = process.env.CONTACT_ADDRESS;
 
-// const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
-// const web3 = createAlchemyWeb3(API_URL);
 const Web3 = require("web3");
 const web3 = new Web3(API_URL);
 web3.eth.defaultAccount = PUBLIC_KEY;
@@ -145,13 +143,16 @@ class NftService {
       );
 
       // Send the signed transaction
+      const txReceipt = await web3.eth.sendSignedTransaction(
+        signedTx.rawTransaction
+      );
+      // Wait for the transaction to be mined
       const receipt = await web3.eth.getTransactionReceipt(
-        signedTx.transactionHash
+        txReceipt.transactionHash
       );
 
       return receipt.transactionHash;
-
-    } catch (error:any) {
+    } catch (error: any) {
       throw new Error(error.message);
     }
   }
