@@ -5,7 +5,7 @@
     "dev": "tsc-watch --onSuccess \"node ./dist/index.js\"",
     "cache": "npm cache clean --force",
     "build": "tsc",
-    "postinstall": "hardhat compile && npm run build",
+    "postinstall": "npx hardhat compile && npm run build",
     "watch": "nodemon --exec \"npm run build && npm run start\" --watch src --ext ts"
   },
   "devDependencies": {
