@@ -46,6 +46,7 @@
 - example - "tokenURI":"https://gateway.pinata.cloud/ipfs/QmX3VGYeCgTwwErVBtwGBLxGWDo5DCv1W3V4R2T6j6ftuD"
 
 - Response - returns the TransactionHash 
+- Can Verify the response transactionHash on https://sepolia.etherscan.io/
 
 #### Update NFT (Protected)
 ```http
@@ -56,6 +57,7 @@
 | `tokenURI` | `string` | **Required**. |
 
 - example - "tokenURI":"https://gateway.pinata.cloud/ipfs/QmSk5UmCJJoTnps6DyewPbukDaLVCmt1JYgb5MB4mhmsDy"
+- Can Verify the response transactionHash on https://sepolia.etherscan.io/
 
 - Response - returns the TransactionHash 
 #### DELETE NFT (Protected)
@@ -63,6 +65,7 @@
   DELETE /nfts/:id
 ```
 - Response - returns the TransactionHash 
+- Can Verify the response transactionHash on https://sepolia.etherscan.io/
 
 
 ## NOTE
