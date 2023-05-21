@@ -6,6 +6,6 @@ typechain
 typechain-types
 dist
 # Hardhat files
-cache
-artifacts
+# cache
+# artifacts
 
