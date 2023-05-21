@@ -65,14 +65,9 @@
 - Response - returns the TransactionHash 
 
 
-
-
-
-
-
 ## NOTE
 - NFT metadata is stored on cloud platform pinata
-
+- Update the nft-metadata.json and upload it on pinata Cloud and provide the URI (like in example) for **Creating and Updating NFT**.
 ### nft-metadata.json
 ```json
 {
